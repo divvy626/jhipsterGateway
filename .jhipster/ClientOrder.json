@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "executions",
+            "otherEntityName": "execution",
+            "otherEntityRelationshipName": "clientOrder"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "stock",
+            "otherEntityName": "stock",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "orderId",
+            "fieldType": "UUID",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "stock",
+            "fieldType": "Stock"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "orderType",
+            "fieldType": "OrderType",
+            "fieldValues": "DAY_LIMIT,AM_AUCTION,CLOSING_AUCTION,GTD"
+        },
+        {
+            "fieldName": "orderTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "executions",
+            "fieldType": "List"
+        }
+    ],
+    "changelogDate": "20180327140530",
+    "entityTableName": "client_order",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "csdemo"
+}

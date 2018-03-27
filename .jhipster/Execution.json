@@ -36,7 +36,7 @@
         },
         {
             "fieldName": "quantity",
-            "fieldType": "Long"
+            "fieldType": "Integer"
         }
     ],
     "changelogDate": "20180327140531",

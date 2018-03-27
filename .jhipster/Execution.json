@@ -2,13 +2,17 @@
     "fluentMethods": true,
     "relationships": [
         {
+            "relationshipType": "many-to-one",
             "relationshipName": "clientOrder",
             "otherEntityName": "clientOrder",
-            "relationshipType": "many-to-one",
             "otherEntityField": "id"
         }
     ],
     "fields": [
+        {
+            "fieldName": "clientOrder",
+            "fieldType": "ClientOrder"
+        },
         {
             "fieldName": "executionId",
             "fieldType": "String",

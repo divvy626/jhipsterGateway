@@ -8,6 +8,10 @@ entity Stock {
     stockType String
 }
 
+enum OrderType {
+    DAY_LIMIT, AM_AUCTION, CLOSING_AUCTION, GTD
+}
+
 entity ClientOrder {
 	orderId UUID required,
     stock Stock,
@@ -24,6 +28,7 @@ entity Execution {
     quantity Long
 }
 
+
 relationship ManyToOne {
 	Stock{listedMarket} to Market
 }
@@ -36,13 +41,9 @@ relationship OneToMany {
 	ClientOrder{executions} to Execution
 }
 
-enum OrderType {
-    DAY_LIMIT, AM_AUCTION, CLOSING_AUCTION, GTD
-}
-
 
 // Set pagination options
-paginate Order with infinite-scroll
+paginate ClientOrder with infinite-scroll
 
 dto * with mapstruct
 

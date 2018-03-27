@@ -31,11 +31,6 @@
             "fieldType": "Double"
         },
         {
-            "fieldName": "orderType",
-            "fieldType": "OrderType",
-            "fieldValues": "DAY_LIMIT,AM_AUCTION,CLOSING_AUCTION,GTD"
-        },
-        {
             "fieldName": "orderTime",
             "fieldType": "Instant"
         },

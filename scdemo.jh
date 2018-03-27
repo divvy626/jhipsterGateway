@@ -14,6 +14,7 @@ entity ClientOrder {
     stock Stock,
     price Double,
     orderTime Instant,
+    quantity Integer,
     executions List
 }
 
@@ -22,7 +23,7 @@ entity Execution {
 	executionId String required,
     executionTime Instant required,
     price Double required,
-    quantity Long
+    quantity Integer
 }
 
 

@@ -35,6 +35,10 @@
             "fieldType": "Instant"
         },
         {
+            "fieldName": "quantity",
+            "fieldType": "Integer"
+        },
+        {
             "fieldName": "executions",
             "fieldType": "List"
         }

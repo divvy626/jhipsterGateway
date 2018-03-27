@@ -4,13 +4,13 @@ entity Market {
 
 entity Stock {
 	stockCode String required,
-    listedMarket Market required,
+    listedMarket Market,
     stockType String
 }
 
 entity Order {
 	orderId UUID required,
-    stock Stock required,
+    stock Stock,
     price Double,
     orderType OrderType,
     orderTime Instant,

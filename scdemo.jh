@@ -8,15 +8,11 @@ entity Stock {
     stockType String
 }
 
-enum OrderType {
-    DAY_LIMIT, AM_AUCTION, CLOSING_AUCTION, GTD
-}
 
 entity ClientOrder {
 	orderId UUID required,
     stock Stock,
     price Double,
-    orderType OrderType,
     orderTime Instant,
     executions List
 }

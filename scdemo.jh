@@ -8,7 +8,7 @@ entity Stock {
     stockType String
 }
 
-entity Order {
+entity ClientOrder {
 	orderId UUID required,
     stock Stock,
     price Double,
@@ -18,7 +18,10 @@ entity Order {
 }
 
 entity Execution {
-	executionId String required
+	executionId String required,
+    executionTime Instant required,
+    price Double required,
+    quantity Long
 }
 
 relationship ManyToOne {
@@ -26,11 +29,11 @@ relationship ManyToOne {
 }
 
 relationship ManyToOne {
-	Order{stock} to Stock
+	ClientOrder{stock} to Stock
 }
 
 relationship OneToMany {
-	Order{executions} to Execution
+	ClientOrder{executions} to Execution
 }
 
 enum OrderType {
